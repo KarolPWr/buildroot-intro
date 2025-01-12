@@ -13,17 +13,18 @@ Konfiguracja Toolchaina
 
     menu Toolchain
 
-## crosstool-ng - toolchain zewnętrzny
+## crosstool-ng - full external
 
 Ściąganie źródeł
 
+    cd workspace/
     git clone https://github.com/crosstool-ng/crosstool-ng
     cd crosstool-ng/
 
 Konfiguracja środowiska
 
     ./bootstrap
-    ./configure
+    ./configure --enable-local
 
 Kompilacja
 
@@ -62,5 +63,6 @@ Przetestuj czy działa
 
 
 
-
+## Dokumentacja crosstool-ng
+https://crosstool-ng.github.io/docs/
 

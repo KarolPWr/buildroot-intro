@@ -1,0 +1,32 @@
+# Automatyzacja konfiguracji u-boota
+
+## Workflow z kontrolą wersji
+
+1. Konto na github.com
+2. for na projekcie buildroot
+3. Stworzenie brancha na sforkowanym projekcie (od releasu odpowiedniego)
+4. Wprowadzamy zmiany na branchu w trakcie szkolenia
+5. Wystawienie MR (do zmergowania, ładnie widać zmiany wtedy)
+
+## Przeniesienie u-boot.bin na kartę pamięci
+
+Zmodyfikuj post-image.sh
+
+    UBOOT="${BINARIES_DIR}"/u-boot.bin
+    FILES+=( "${UBOOT}" )
+
+## Przeniesienie bootscriptu
+
+Zmodyfikuj post-build.sh
+
+    ubootName=`find $BASE_DIR/build -name 'uboot-*' -type d`
+    $ubootName/tools/mkimage -A arm64 -O linux -T script -C none -d $BOARD_DIR/boot_cmd.txt $BINARIES_DIR/boot.scr
+
+Dodaj w pętli głównej:
+
+    BOOTSCRIPT="${BINARIES_DIR}"/boot.scr
+    FILES+=( "${BOOTSCRIPT}" )
+
+## Zmiana config.txt
+
+Zmodyfikuj config.txt w katalogu boards/, wskaż u-boot jako pierwszy program wykonywalny 
