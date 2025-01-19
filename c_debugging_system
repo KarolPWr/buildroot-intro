@@ -1,0 +1,14 @@
+# Debugowanie systemu i aplikacji
+
+## Logi
+
+    dmesg 
+    logread | journalctl | /var/log/
+
+## gdb, gdbserver 
+
+
+## strace | ltrace 
+
+
+## performance issues - top 
