@@ -7,14 +7,25 @@
 
     Board defconfig -> rpi_4 
 
+Zbuduj nowe komponenty
+
+    sudo apt-get install libgnutls28-dev TODO kontener
+    make 2>&1 | tee build.log
+
 ## Test
 
 Sprawdź jakie nowe pliki pojawiły się w output/
+
 Wgraj nowy obraz na Raspberry - co się dzieje po boocie?
 
 ## Modyfikacja config.txt 
 
+Przenieś plik u-boot.bin na partycję bootfs
+
     cp u-boot.bin <karta_sd>/bootfs
+
+Zmodyfikuj plik config.txt na partycji bootfs
+
     kernel=u-boot.bin
 
 ## Komendy w u-boot
@@ -23,13 +34,11 @@ Wgraj nowy obraz na Raspberry - co się dzieje po boocie?
     setenv bootargs root=/dev/mmcblk0p2 rootwait console=tty1 console=ttyAMA0,115200
     booti ${kernel_addr_r} - ${fdtcontroladdr}
 
-Pytanie: Jak to zautomatyzować?
-
 ## Bootscripts
 
     cd workspace/
     vim boot_cmd.txt # przepisujemy to co u góry
-    buildroot/output/build/uboot-2024.01/tools/mkimage -A arm64 -O linux -T script -C none -d boot_cmd.txt boot.scr
-    cp boot.scr <karta_sd>/bootfs
+    buildroot/output/build/uboot-2024.10/tools/mkimage -A arm64 -O linux -T script -C none -d boot_cmd.txt boot.scr
+    cp boot.scr <karta_sd>/bootfs && sync
 
-
+Jak to zautomatyzować?

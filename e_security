@@ -3,3 +3,24 @@
 ## Read-only rootfs
 
     System configuration -> 
+
+## Wyłączanie niepotrzebnych ficzerów 
+
+Zmniejszenie obrazu oraz mniejsza powierzchnia ataku
+
+## Wyłączanie interfejsów
+
+Koniecznie disable UART
+
+## Zmiana portu SSH 
+
+## Używanie haseł 
+
+## Linux kernel hardening
+USB_USBNET
+PAGE_POISON
+DEVMEM
+
+## Secure boot 
+
+## Apparmor, SELinux
