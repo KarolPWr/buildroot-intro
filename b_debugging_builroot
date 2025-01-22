@@ -13,6 +13,7 @@ Wyświetl wszystkie defconfigi:
 Wyświetl wszystkie możliwe targety: 
 
     $ make help
+    make show-targets
 
 delete all build products (including build directories, host, staging and target trees, the images and the toolchain):
 
