@@ -24,3 +24,7 @@ DEVMEM
 ## Secure boot 
 
 ## Apparmor, SELinux
+
+# Build options
+
+make menuconfig -> build options -> na samym dole security hardening 

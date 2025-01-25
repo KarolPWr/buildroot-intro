@@ -8,6 +8,8 @@
 4. Wprowadzamy zmiany na branchu w trakcie szkolenia
 5. Wystawienie MR (do zmergowania, ładnie widać zmiany wtedy)
 
+TODO: Przesunąć ten workflow na sam początek, do pierwszego ćwiczenia? 
+
 ## Przeniesienie u-boot.bin na kartę pamięci
 
 Zmodyfikuj buildroot/board/raspberrypi/post-image.sh
@@ -22,6 +24,8 @@ Zmodyfikuj post-image.sh
     ubootName=`find $BASE_DIR/build -name 'uboot-*' -type d`
     $ubootName/tools/mkimage -A arm64 -O linux -T script -C none -d $BOARD_DIR/boot_cmd.txt $BINARIES_DIR/boot.scr
 
+TODO: ^ to zrobić jako ćwiczenie. podać link do implemenacji rockchipa
+
 Dodaj w pętli głównej w post-image.sh:
 
     BOOTSCRIPT="${BINARIES_DIR}"/boot.scr
@@ -34,6 +38,8 @@ Zmodyfikuj config.txt w katalogu boards/, wskaż u-boot jako pierwszy program wy
 ## Test
 
 Przetestuj zmianę:
+
+    make 2>&1 | tee build.log
 
 - Czy występują problemy przy budowaniu?
 - Czy system bootuje się prawidłowo, tzn. u-boot -> kernel -> login prompt? 

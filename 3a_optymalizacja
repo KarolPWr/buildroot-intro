@@ -1,0 +1,17 @@
+# CCACHE
+
+Włącz CCACHE w make menuconfig
+
+
+
+# Checklista optymalizacyjna
+
+Czy korzystam z VM?
+
+Czy korzystam z NFS?
+
+Toolchain w wersji external?
+
+Włączone CCACHE? 
+
+Wiem kiedy przebudować projekt? 

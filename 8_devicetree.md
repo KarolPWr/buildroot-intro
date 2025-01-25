@@ -1,34 +1,62 @@
 # DTO - ręcznie
-Zmodyfikuj plik led_overlay.dts
+
+Stwórz nowy katalog w workspace/
+
+    cd workspace
+    mkdir overlay
+
+Skopiuj szablon overlaya:
+
+    cp devicetree/overlay_template.dts <SCIEZKA>/workspace
+
+Wypełnij pola oznaczone symbolami XXX. 
+
+Skorzystaj z dokumentacji: 
+
+https://github.com/raspberrypi/linux/blob/rpi-6.6.y/Documentation/devicetree/bindings/leds/common.yaml 
+
+Oraz przykładów overlayów od Raspberry Pi Foundation:
+
+https://github.com/raspberrypi/linux/tree/rpi-6.6.y/arch/arm/boot/dts/overlays
+
 
 Skompiluj za pomocą: 
+
     dtc -@ -I dts -O dtb -o ${DTBO_TARGET} ${DTS_SOURCE}
 
 
 # DTO - w buildroot
 
-Stwórz plik w boards/raspberrypi
+Wracamy do Buildroota
 
-    cp led_overlay.dts /home/karol.przybylski/prv/buildroot_rpi/buildroot/board/raspberrypi/overlays
+Przenieś plik do boards/raspberrypi
+
+    cp led_overlay.dts buildroot/board/raspberrypi/overlays
 
 Zmodyfikuj post-build.sh
 
-    # Path to the overlay source and target
+    # Sciezki do overlayów
     DTS_SOURCE="board/raspberrypi/overlays/led_overlay.dts"
     DTBO_TARGET="${BINARIES_DIR}/rpi-firmware/overlays/led_overlay.dtbo"
 
-    # Compile the device tree overlay
+    # Kompilacja overlaya
     dtc -@ -I dts -O dtb -o ${DTBO_TARGET} ${DTS_SOURCE}
 
-Zmodyfikuj config.txt
+Zmodyfikuj config.txt dla platformy
 
     dtoverlay=led_overlay
 
-Przebuduj (Czy na pewno?)
+Przebuduj
 
-    make clean && make -j8
+    make
     sudo dd if=sdcard.img of=/dev/<SDXXXX>
 
-Zweryfikuj czy pliki są tam gdzie trzeba
-The compiled custom-overlay.dtbo is present in the overlays directory in the rpi-firmware folder.
-The config.txt includes the dtoverlay=custom-overlay line.
+Zweryfikuj czy pliki są tam gdzie trzeba:
+
+- Nasz nowy, skompilowany overlay jest w katalogu overlays w folderze rpi-firmware
+
+- config.txt zawiera odpowiednią linijkę:
+
+        dtoverlay=custom-overlay line.
+
+- Zaprogramuj płytkę, obserwuj czy działa tak jak powinna.

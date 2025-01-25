@@ -1,0 +1,22 @@
+#!/bin/sh
+
+case "$1" in
+  start)
+    echo "Starting my_service..."
+    /usr/sbin/resource_monitor.sh &
+    ;;
+  stop)
+    echo "Stopping my_service..."
+    killall resource_monitor.sh
+    ;;
+  restart)
+    $0 stop
+    $0 start
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|restart}"
+    exit 1
+    ;;
+esac
+
+exit 0
