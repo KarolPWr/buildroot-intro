@@ -1,9 +1,24 @@
+# Podłączenie diody LED
+
+Stwórz prosty układ z pł←tki stykowej, rezystora i diody LED. 
+
+GPIO -> Rezystor -> LED -> GND
+
+W podobny sposób jak tutaj:
+
+https://cdn.shopify.com/s/files/1/0176/3274/files/raspberry_pi_led_breadboard_circuit.jpg?v=1683712372
+
+Użyj pinoutu dla Raspberry Pi:
+
+https://www.raspberrypi.com/documentation/computers/raspberry-pi.html
+
+
 # DTO - ręcznie
 
 Stwórz nowy katalog w workspace/
 
     cd workspace
-    mkdir overlay
+    mkdir overlay && cd overlay
 
 Skopiuj szablon overlaya:
 
@@ -31,6 +46,7 @@ Wracamy do Buildroota
 
 Przenieś plik do boards/raspberrypi
 
+    mkdir buildroot/board/raspberrypi/overlays
     cp led_overlay.dts buildroot/board/raspberrypi/overlays
 
 Zmodyfikuj post-build.sh
@@ -42,9 +58,11 @@ Zmodyfikuj post-build.sh
     # Kompilacja overlaya
     dtc -@ -I dts -O dtb -o ${DTBO_TARGET} ${DTS_SOURCE}
 
-Zmodyfikuj config.txt dla platformy
+Zmodyfikuj config.txt dla platformy, dodaj linijkę:
 
-    dtoverlay=led_overlay
+    echo "dtoverlay=led_overlay" >> "${BINARIES_DIR}"/rpi-firmware/config.txt
+
+do skryptu post-build.sh
 
 Przebuduj
 
