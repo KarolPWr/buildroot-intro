@@ -2,7 +2,7 @@
 
 ## Read-only rootfs
 
-    System configuration -> 
+    menu System configuration 
 
 ## Wyłączanie niepotrzebnych ficzerów 
 
@@ -14,6 +14,8 @@ Koniecznie disable UART
 
 ## Zmiana portu SSH 
 
+Mało kto atakuje poza portem domyślnym
+
 ## Używanie haseł 
 
 ## Linux kernel hardening
@@ -23,8 +25,10 @@ DEVMEM
 
 ## Secure boot 
 
+Więcej informacji: https://pip.raspberrypi.com/categories/685-whitepapers-app-notes-compliance-guides/documents/RP-003466-WP/Boot-Security-Howto.pdf
+
 ## Apparmor, SELinux
 
-# Build options
+# Build options w Buildroot
 
 make menuconfig -> build options -> na samym dole security hardening 

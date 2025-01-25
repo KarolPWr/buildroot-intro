@@ -1,18 +1,5 @@
 # Toolchain
 
-## Konfiguracja
-
-    cd buildroot
-    make menuconfig
-
-Poruszamy się w menuconfigu.
-
-    Toolchain -> Toolchain Type -> External 
-
-Konfiguracja Toolchaina
-
-    menu Toolchain
-
 ## crosstool-ng - full external
 
 Ściąganie źródeł
@@ -59,6 +46,11 @@ Sprawdź czy wszystko się zgadza za pomocą komendy:
 
 ## Tip: nawigacja w menuconfig
 
+SPACJA - zaznaczamy wybór opcji
+
+[ ] - pustka, czyli nie jest włączone (enabled)
+[*] - opcja zostanie zbudowana/włączona
+
 / - szukanie
 
 (1) - po naciśnięciu numeru przy wyniku wyszukiwania, menuconfig nas tam przeniesie
@@ -71,22 +63,22 @@ Toolchain można zbudować za pomocą komendy:
 Proces budowania zajmie około 20 minut
     
     
-## Ustawienie external toolchaina w menu Buildroota (praca grupowa)
+# Ustawienie external toolchaina w menu Buildroota (praca grupowa)
 
 Przejdź do katalogu gdzie są źródła Buildroota
 
     cd buildroot/
 
-Wybierz w make menuconfig Custom toolchain w menu Toolchain
+Wybierz w make menuconfig -> Custom toolchain w menu Toolchain
 
     Toolchain type -> External toolchain
-    Tolchain (Custom toolchain)
+    Toilchain (Custom toolchain)
 
 Trzeba wypełnić:
 
 - toolchain path:
 
-    <SCIEZKA>/crosstool-ng/x-tools/aarch64-rpi4-linux-gnu
+    <SCIEZKA DO WORKSPACE>/crosstool-ng/x-tools/aarch64-rpi4-linux-gnu
 
 - toolchain prefix:
 
@@ -94,15 +86,15 @@ Trzeba wypełnić:
 
 - C library options:
 
-gcc version: 14.x
+    gcc version: 14.x
 
-kernel headers: 6.x 
+    kernel headers: 6.x 
 
-C library: glibc
+    C library: glibc
 
-brak RPC support
+    brak RPC support
 
-istnieje C++ support
+    istnieje C++ support
 
 ## Budowanie
 

@@ -78,3 +78,9 @@ Zweryfikuj czy pliki są tam gdzie trzeba:
         dtoverlay=custom-overlay line.
 
 - Zaprogramuj płytkę, obserwuj czy działa tak jak powinna.
+
+## Sprawdzanie DT w runtime
+
+Wpisy dotyczące devicetree pojawiają się w /sys/firmware 
+
+    cat /sys/firmware/devicetree/base/leds@1/led/label

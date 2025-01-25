@@ -1,18 +1,16 @@
 # Tworzenie własnych paczek
 
-Używamy workflow in-tree 
+Używamy workflow in-tree. Przechodzimy do źródeł Buildroota
 
-mkdir packages/thermo
-cd packages/thermo
+    cd workspace/buildroot
+    mkdir package/hello
+    cd package/hello
 
 Tworzymy następujacą hierarchię plików:
 
     .
     ├── Config.in
     ├── hello.mk
-    └── src
-        ├── hello.c
-        └── Makefile
 
 Config.in:
 
@@ -27,16 +25,16 @@ Config.in:
 hello.mk:
 
     ################################################################################
-    # Recepta
+    # Buildroot package description for your C project
     ################################################################################
 
     # Replace 'your-package' with the actual name of your package.
-    HELLO_VERSION = 1.0 
+    HELLO_VERSION = 1.0
     HELLO_SITE = $(call github,KarolPWr,aahed,v$(HELLO_VERSION))
 
-    # Build config
+    # Build configuration
     define HELLO_BUILD_CMDS
-        $(MAKE) CC="$(TARGET_CC)" LD="$(TARGET_LD)" -C $(@D)
+        $(MAKE) CC="$(TARGET_CC)" LD="$(TARGET_LD)" -C $(@D)/src
     endef
 
     # Install target for your built binaries
@@ -47,6 +45,20 @@ hello.mk:
     # Register the package
     $(eval $(generic-package))
 
-Dodać linijkę do Config.in w packages/ (jaką?)
+Dodać linijkę do Config.in w packages/
 
-## Zaznaczyć w menuconfig, zbudować samą paczkę a następnie cały image i przetestować.
+    menu "Sterlet Packages"
+        source "package/hello/Config.in"
+    endmenu
+
+## Budowanie
+
+Zbuduj najpierw paczkę "na sucho", żeby sprawdzić czy w ogóle się buduje
+
+    make <pkg-name>
+
+Sprawdź w output/build czy wszystko wygląda tak jak powinno
+
+Przebuduj obraz i wrzuć na target
+
+    make clean all

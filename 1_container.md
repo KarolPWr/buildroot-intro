@@ -5,7 +5,7 @@
 
 Przykładowy output:
 
-    $ docker --version
+    docker --version
 
     Docker version 24.0.7, build 24.0.7-0ubuntu2~22.04.1
 
@@ -26,6 +26,6 @@ Po chwili powinniśmy zobaczyć prompt systemowy:
 
 Jesteśmy gotowi do pracy z Buildrootem.
 
-Kontener domyślnie wchodzi do katalogu domowego bieżącego użytkownika. Stwórz folder workspace, w któ©ym będziesz pracował. 
+Kontener domyślnie wchodzi do katalogu domowego bieżącego użytkownika. Stwórz folder workspace, w którym będziesz pracować. 
     
     mkdir workspace && cd workspace 

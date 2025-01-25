@@ -15,7 +15,7 @@ Wyświetl wszystkie możliwe targety:
     $ make help
     make show-targets
 
-delete all build products (including build directories, host, staging and target trees, the images and the toolchain):
+"delete all build products (including build directories, host, staging and target trees, the images and the toolchain)":
 
     make clean
 
@@ -30,6 +30,8 @@ Dumping the internal make variables: One can dump the variables known to make, a
 ### Drukowanie wartości zmiennych
 
     make -s printvars VARS='VARIABLE1 VARIABLE2'
+
+# Zadanie
 
 Sprawdź wartość TARGET_DIR i dowolnej innej zmiennej
 
@@ -63,7 +65,9 @@ oraz
 
     make BR2_INSTRUMENTATION_SCRIPTS="/path/to/my/script1 /path/to/my/script2"
 
-Zadanie: Napisz skrypt, który wykona się przed i po każdym kroku budowania danej paczki
+## Zadanie
+
+Napisz skrypt, który wykona się przed i po każdym kroku budowania danej paczki
 
 Więcej informacji: https://buildroot.org/downloads/manual/manual.html#debugging-buildroot 
 
