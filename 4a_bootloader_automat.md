@@ -1,15 +1,5 @@
 # Automatyzacja konfiguracji u-boota
 
-## Workflow z kontrolą wersji
-
-1. Konto na github.com
-2. fork na projekcie buildroot
-3. Stworzenie brancha na sforkowanym projekcie (od wybranego brancha/releasu)
-4. Wprowadzamy zmiany na branchu w trakcie szkolenia
-5. Wystawienie MR (do zmergowania, ładnie widać zmiany wtedy)
-
-TODO: Przesunąć ten workflow na sam początek, do pierwszego ćwiczenia? 
-
 ## Przeniesienie u-boot.bin na kartę pamięci
 
 Zmodyfikuj buildroot/board/raspberrypi/post-image.sh
@@ -19,12 +9,12 @@ Zmodyfikuj buildroot/board/raspberrypi/post-image.sh
 
 ## Przeniesienie bootscriptu
 
+Przenieś boot_cmd.txt do katalogu boards/<PLATFORMA>
+
 Zmodyfikuj post-image.sh
 
     ubootName=`find $BASE_DIR/build -name 'uboot-*' -type d`
     $ubootName/tools/mkimage -A arm64 -O linux -T script -C none -d $BOARD_DIR/boot_cmd.txt $BINARIES_DIR/boot.scr
-
-TODO: ^ to zrobić jako ćwiczenie. podać link do implemenacji rockchipa
 
 Dodaj w pętli głównej w post-image.sh:
 
@@ -34,6 +24,10 @@ Dodaj w pętli głównej w post-image.sh:
 ## Zmiana config.txt
 
 Zmodyfikuj config.txt w katalogu boards/, wskaż u-boot jako pierwszy program wykonywalny (tak jak gdy robiliśmy to ręcznie)
+
+Musimy wskazać w pliku config.txt że pierwszym programem wykonywalnym będzie u-boot.bin zamiast Image (kernel image)
+
+Jak to zrobić?
 
 ## Test
 

@@ -9,7 +9,6 @@
 
 Zbuduj nowe komponenty
 
-    sudo apt-get install libgnutls28-dev TODO kontener
     make 2>&1 | tee build.log
 
 ## Test

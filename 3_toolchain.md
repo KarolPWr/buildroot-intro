@@ -49,6 +49,7 @@ Sprawdź czy wszystko się zgadza za pomocą komendy:
 SPACJA - zaznaczamy wybór opcji
 
 [ ] - pustka, czyli nie jest włączone (enabled)
+
 [*] - opcja zostanie zbudowana/włączona
 
 / - szukanie
@@ -60,25 +61,29 @@ Toolchain można zbudować za pomocą komendy:
 
     ./ct-ng build
 
-Proces budowania zajmie około 20 minut
+Proces budowania zajmie około 30 minut
     
     
-# Ustawienie external toolchaina w menu Buildroota (praca grupowa)
+# Ustawienie external toolchaina (praca grupowa)
 
 Przejdź do katalogu gdzie są źródła Buildroota
 
-    cd buildroot/
+    cd workspace/buildroot/
 
 Wybierz w make menuconfig -> Custom toolchain w menu Toolchain
 
     Toolchain type -> External toolchain
-    Toilchain (Custom toolchain)
+    Toolchain (Custom toolchain)
 
 Trzeba wypełnić:
 
 - toolchain path:
 
     <SCIEZKA DO WORKSPACE>/crosstool-ng/x-tools/aarch64-rpi4-linux-gnu
+
+lub jeśli korzystasz ze ściągniętego x-tools:
+
+    <SCIEZKA DO WORKSPACE>/x-tools/aarch64-rpi4-linux-gnu
 
 - toolchain prefix:
 
@@ -88,7 +93,7 @@ Trzeba wypełnić:
 
     gcc version: 14.x
 
-    kernel headers: 6.x 
+    kernel headers: 6.11.x 
 
     C library: glibc
 
@@ -96,10 +101,20 @@ Trzeba wypełnić:
 
     istnieje C++ support
 
+## Ustawienie pre-buil toolchain
+
+Ustaw lepszy mirror:
+
+    Build options -> Mirrors and download location -> Wpisz https://ftp.gnu.org/gnu w primary download site
+
+Zmiana toolchaina na prebuilt
+
+    Toolchain type -> External toolchain
+    Toolchain -> Arm AArch64 13.3.rel1
+    Toolchain origin (Toolchain to be downloaded and installed)
+
 ## Budowanie
 
-    make 2>&1 | tee build.log
-
-Test na targecie (wgranie softu na kartę SD, sprawdzenie seriala)
+W kolejnym ćwiczeniu
 
 

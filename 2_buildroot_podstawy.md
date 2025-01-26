@@ -19,19 +19,7 @@ Wpisanie defconfiga:
 
     make raspberrypi4_64_defconfig
 
-Budowanie 
 
-    make 2>&1 | tee build.log
-
-Wgranie na kartę SD
-
-    dd if=output/images/sdcard.img of=/dev/<DEVICE> && sync
-
-## Test na Raspberry 
-
-Włóż kartę SD do slotu na płytce. Obserwuj co wyświetli się na połączeniu szeregowym. Po kilku sekundach pojawią się pierwsze logi.
-
-login: root
 
 
 
