@@ -29,6 +29,8 @@ Musimy wskazać w pliku config.txt że pierwszym programem wykonywalnym będzie 
 
     sed -i 's/^kernel=Image$/kernel=u-boot.bin/' "${BINARIES_DIR}/rpi-firmware/config.txt"
 
+Zwróć również uwagę na zmienną KERNEL. W jaki sposób jest ustalana i czy wymaga zmiany?
+
 ## Test
 
 Przetestuj zmianę:
