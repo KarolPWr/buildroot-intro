@@ -25,7 +25,7 @@ if [ ! -e "${GENIMAGE_CFG}" ]; then
 	BOOTSCRIPT="${BINARIES_DIR}"/boot.scr
 	FILES+=( "${BOOTSCRIPT}" )
 
-	KERNEL=$(sed -n 's/^kernel=//p' "${BINARIES_DIR}/rpi-firmware/config.txt")
+	KERNEL="Image"
 	FILES+=( "${KERNEL}" )
 
 	sed -i 's/^kernel=Image$/kernel=u-boot.bin/' "${BINARIES_DIR}/rpi-firmware/config.txt"

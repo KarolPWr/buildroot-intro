@@ -38,6 +38,8 @@ Musimy wskazać w pliku config.txt że pierwszym programem wykonywalnym będzie 
 
 Jak to zrobić?
 
+Zwróć również uwagę na zmienną KERNEL. W jaki sposób jest ustalana i czy wymaga zmiany?
+
 ## Test
 
 Przetestuj zmianę:
