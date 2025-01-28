@@ -17,7 +17,7 @@ Wylistuj defconfigi dla Raspberry Pi
 
 Wpisanie defconfiga:
 
-    make raspberrypi4_64_defconfig
+    make raspberrypicm4io_64_defconfig
 
 
 
