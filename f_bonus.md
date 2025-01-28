@@ -13,5 +13,8 @@ https://www.timesys.com/security/securing-your-linux-configuration-kernel-harden
 ### Dokumentacja crosstool-ng
 https://crosstool-ng.github.io/docs/
 
+### Wizytówka - project Linux + custom PCB
+https://www.thirtythreeforty.net/posts/2019/12/my-business-card-runs-linux/ 
+
 ### Przykłady
 https://elinux.org/Buildroot

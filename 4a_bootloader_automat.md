@@ -11,10 +11,17 @@ Zmodyfikuj buildroot/board/raspberrypi/post-image.sh
 
 Przenieś boot_cmd.txt do katalogu boards/<PLATFORMA>
 
+### Zadanie
+
 Zmodyfikuj post-image.sh
 
-    ubootName=`find $BASE_DIR/build -name 'uboot-*' -type d`
-    $ubootName/tools/mkimage -A arm64 -O linux -T script -C none -d $BOARD_DIR/boot_cmd.txt $BINARIES_DIR/boot.scr
+Musimy w skrypcie znaleźć narzędzie do budowania bootscriptów (mkimage) i następnie go użyć.
+
+Jedna z możliwych metod jest zaimplementowana w repozytorium rockchipa: https://github.com/flatmax/buildroot.rockchip/blob/master/board/RK3308/post-image.sh 
+
+Spróbuj użyć tego pliku jako inspiracji.
+
+### Dodanie bootscriptu do listy plików
 
 Dodaj w pętli głównej w post-image.sh:
 
@@ -24,6 +31,8 @@ Dodaj w pętli głównej w post-image.sh:
 ## Zmiana config.txt
 
 Zmodyfikuj config.txt w katalogu boards/, wskaż u-boot jako pierwszy program wykonywalny (tak jak gdy robiliśmy to ręcznie)
+
+### Zadanie
 
 Musimy wskazać w pliku config.txt że pierwszym programem wykonywalnym będzie u-boot.bin zamiast Image (kernel image)
 
