@@ -6,30 +6,29 @@
 
 Zmień następujące parametry:
 1. Show caller information on printks 
-2. Zmień loglevel debug messages
+2. Zmień Default console loglevel na poziom 15
 
 Użyj szukajki (`/`) 
 
-Zbuduj i przetestuj czy działa. Jaki jest efekt zmian?
-
 ## Zapisanie konfiguracji
 
-W tym momencie nie można zapisać configa, bo używamy domyślnego defconfiga.
+W tym momencie nie można zapisać configa, bo używamy domyślnego defconfiga. Buildroot nie zna ścieżki zapisu.
+
+Wywołaj:
 
     make menuconfig
 
-Zmień opcję na custom configuration file dla kernela. Buildroot stworzy ją automatycznie.
-Dodaj ścieżkę do zapisu defconfiga
+Następnie w menu
 
-    Hint: podstawą ścieżki jest katalog buildroot/
+    Kernel -> Kernel configuration file -> Using custom (def)config file
 
-Sprawdź gdzie została zapisana.
+i uzupełnij `Configuration file path` o nazwę pliku (wybierz samodzielnie, np my_config)
 
-Zaktualizuj:
+Zaktualizuj konfigurację:
 
     make linux-update-defconfig
 
-Stworzy konfigurację jako plik defconfig
+Sprawdź czy plik został stworzony i czy nie jest pusty.
 
 ## Test
 
@@ -37,4 +36,4 @@ Porównaj log z bootowania kernela z logiem przed modyfikacjami.
 
 Jakie są różnice? 
 
-Czy jest jakiś wpływ na performance?
+Czy jest jakiś wpływ na performance (czas bootowania)?

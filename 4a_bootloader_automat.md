@@ -9,7 +9,7 @@ Zmodyfikuj buildroot/board/raspberrypi/post-image.sh
 
 ## Przeniesienie bootscriptu
 
-Przenieś boot_cmd.txt do katalogu boards/<PLATFORMA>
+Przenieś boot_cmd.txt do katalogu buildroot/board/raspberrypi
 
 Zmodyfikuj post-image.sh
 
@@ -27,7 +27,7 @@ Dodaj w pętli głównej w post-image.sh:
 
 Musimy wskazać w pliku config.txt że pierwszym programem wykonywalnym będzie u-boot.bin zamiast Image (kernel image)
 
-Jak to zrobić?
+    sed -i 's/^kernel=Image$/kernel=u-boot.bin/' "${BINARIES_DIR}/rpi-firmware/config.txt"
 
 ## Test
 

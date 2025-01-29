@@ -77,7 +77,7 @@ Odpal ręcznie oba skrypty - jaki jest efekt działania? Czy taki jak oczekiwany
 
 Zresetuj płytkę (np. komenda reboot) i sprawdź czy Twój serwis zaczyna działać automatycznie po starcie.
 
-## Dodawanie gotowych paczek
+## Zadanie - Dodawanie gotowych paczek
 
 Przechodzimy do buildroota
 
