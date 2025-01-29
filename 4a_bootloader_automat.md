@@ -30,8 +30,6 @@ Dodaj w pętli głównej w post-image.sh:
 
 ## Zmiana config.txt
 
-Zmodyfikuj config.txt w katalogu boards/, wskaż u-boot jako pierwszy program wykonywalny (tak jak gdy robiliśmy to ręcznie)
-
 ### Zadanie
 
 Musimy wskazać w pliku config.txt że pierwszym programem wykonywalnym będzie u-boot.bin zamiast Image (kernel image)
