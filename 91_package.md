@@ -45,11 +45,13 @@ hello.mk:
     # Register the package
     $(eval $(generic-package))
 
-Dodać linijkę do Config.in w packages/
+Dodać do Config.in w buildroot/package/ (przed ostatnim endmenu)
 
     menu "Sterlet Packages"
         source "package/hello/Config.in"
     endmenu
+
+Wejdź do make menuconfig i dodaj nową paczkę do buildu (pojawi się nowe menu w Target packages na dole)
 
 ## Budowanie
 
@@ -61,4 +63,4 @@ Sprawdź w output/build czy wszystko wygląda tak jak powinno
 
 Przebuduj obraz i wrzuć na target
 
-    make clean all
+    make
