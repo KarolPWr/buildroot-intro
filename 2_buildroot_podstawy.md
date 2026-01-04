@@ -4,7 +4,7 @@
 
     git clone https://git.buildroot.org/buildroot 
     cd buildroot
-    git checkout -b my_root origin/2024.11.x
+    git checkout -b my_root origin/2025.11.x
 
 Lista wszystkich defconfigów:
 

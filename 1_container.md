@@ -13,6 +13,7 @@ Przykładowy output:
 
 Klonujemy repozytorium:
 
+    mkdir workspace && cd workspace
     git clone https://github.com/KarolPWr/docker-buildroot.git
     cd docker-buildroot
 
@@ -26,6 +27,6 @@ Po chwili powinniśmy zobaczyć prompt systemowy:
 
 Jesteśmy gotowi do pracy z Buildrootem.
 
-Kontener domyślnie wchodzi do katalogu domowego bieżącego użytkownika. Stwórz folder workspace, w którym będziesz pracować. 
+Kontener domyślnie wchodzi do katalogu domowego bieżącego użytkownika. Jeśli folder workspace już istnieje, możesz teraz do niego przejść.
     
-    mkdir workspace && cd workspace 
+    cd workspace 
