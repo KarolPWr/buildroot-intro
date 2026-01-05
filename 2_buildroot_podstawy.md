@@ -2,7 +2,7 @@
 
 Ściągnij repo Buildroota:
 
-    git clone https://git.buildroot.org/buildroot 
+    git clone https://gitlab.com/buildroot.org/buildroot.git
     cd buildroot
     git checkout -b my_root origin/2025.11.x
 

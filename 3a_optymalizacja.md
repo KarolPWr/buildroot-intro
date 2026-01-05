@@ -28,7 +28,7 @@ Budowanie
 
 Wgranie na kartę SD
 
-    dd if=output/images/sdcard.img of=/dev/<DEVICE> && sync
+    dd if=output/images/sdcard.img of=/dev/<DEVICE> status=progress && sync
 
 ## Test na Raspberry 
 

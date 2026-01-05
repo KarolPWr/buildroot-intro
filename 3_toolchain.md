@@ -7,6 +7,7 @@
     cd workspace/
     git clone https://github.com/crosstool-ng/crosstool-ng
     cd crosstool-ng/
+    git checkout -b my_crosstool origin/crosstool-ng-1.28.0
 
 Konfiguracja środowiska
 
@@ -101,7 +102,7 @@ lub jeśli korzystasz ze ściągniętego x-tools:
 
     istnieje C++ support
 
-## Ustawienie pre-buil toolchain
+## Ustawienie pre-built toolchain
 
 Ustaw lepszy mirror:
 
