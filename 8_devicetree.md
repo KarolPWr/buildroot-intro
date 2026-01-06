@@ -1,6 +1,6 @@
 # Podłączenie diody LED
 
-Stwórz prosty układ z pł←tki stykowej, rezystora i diody LED. 
+Stwórz prosty układ z płytki stykowej, rezystora i diody LED. 
 
 GPIO -> Rezystor -> LED -> GND
 
