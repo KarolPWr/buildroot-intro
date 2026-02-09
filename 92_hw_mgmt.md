@@ -11,8 +11,8 @@ Co oznacza symbol M przy module?
 Podłącz czujnik zgodnie z pinoutem: 
 https://www.raspberrypi.com/documentation/computers/images/GPIO-Pinout-Diagram-2.png?hash=df7d7847c57a1ca6d5b2617695de6d46
 
-    SCL <-> SCL (GPIO 2)
-    SDA <-> SDA (GPIO 3)
+    SCL <-> SCL (GPIO 3)
+    SDA <-> SDA (GPIO 2)
     VCC <-> 3v3 power (GPIO 1)
     GND <-> Dowolny ground
 

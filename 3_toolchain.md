@@ -7,7 +7,7 @@
     cd workspace/
     git clone https://github.com/crosstool-ng/crosstool-ng
     cd crosstool-ng/
-    git checkout -b my_crosstool origin/crosstool-ng-1.28.0
+    git checkout -b my_crosstool tags/crosstool-ng-1.28.0
 
 Konfiguracja środowiska
 
@@ -26,10 +26,6 @@ Sprawdzenie konfiguracji
 Wpisanie configa
 
     ./ct-ng aarch64-rpi4-linux-gnu
-
-Zmiana ścieżki gdzie będzie zbudowany toolchain
-
-    sed -i '/^CT_PREFIX_DIR=/s/.*/CT_PREFIX_DIR="${CT_PREFIX:-${PWD}\/x-tools}\/${CT_HOST:+HOST-${CT_HOST}\/}${CT_TARGET}"/' .config
 
 ## Zadanie
 
@@ -106,12 +102,13 @@ lub jeśli korzystasz ze ściągniętego x-tools:
 
 Ustaw lepszy mirror:
 
+    make menuconfig # Wejście do menu konfiguracyjnego
     Build options -> Mirrors and download location -> Wpisz https://ftp.gnu.org/gnu w primary download site
 
 Zmiana toolchaina na prebuilt
 
     Toolchain type -> External toolchain
-    Toolchain -> Arm AArch64 13.3.rel1
+    Toolchain -> Arm AArch64 14.2.rel1
     Toolchain origin (Toolchain to be downloaded and installed)
 
 ## Budowanie
