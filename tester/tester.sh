@@ -37,7 +37,7 @@ if [ ! -d "${BUILDROOT_DIR}" ]; then
     cd "${BUILDROOT_DIR}"
     # Using master as fallback or specific version if known (training docs mention 2025.11, using master for now)
     echo "Checking out stable branch..."
-    git checkout -b my_root origin/2025.11.x 
+    git checkout -b my_root origin/2024.11.x
 
     echo "Listing defconfigs for Raspberry Pi..."
     make list-defconfigs | grep raspberrypi
@@ -52,28 +52,28 @@ fi
 
 echo "--- Exercise 3: Crosstool-NG Toolchain ---"
 
-cd "${WORKSPACE_DIR}"
-if [ ! -d "${CT_NG_DIR}" ]; then
-    git clone https://github.com/crosstool-ng/crosstool-ng "${CT_NG_DIR}"
+# cd "${WORKSPACE_DIR}"
+# if [ ! -d "${CT_NG_DIR}" ]; then
+#     git clone https://github.com/crosstool-ng/crosstool-ng "${CT_NG_DIR}"
 
-    cd "${CT_NG_DIR}"
-    echo "Checking out stable branch..."
-    git checkout -b my_crosstool tags/crosstool-ng-1.28.0
-    if [ ! -f "./ct-ng" ]; then
-        ./bootstrap
-        ./configure --enable-local
-        make
-    fi
+#     cd "${CT_NG_DIR}"
+#     echo "Checking out stable branch..."
+#     git checkout -b my_crosstool tags/crosstool-ng-1.28.0
+#     if [ ! -f "./ct-ng" ]; then
+#         ./bootstrap
+#         ./configure --enable-local
+#         make
+#     fi
 
-    # Configure for RPi4
-    ./ct-ng aarch64-rpi4-linux-gnu
+#     # Configure for RPi4
+#     ./ct-ng aarch64-rpi4-linux-gnu
 
-    # Fix CT_PREFIX_DIR path to be absolute in the container
-    #sed -i '/^CT_PREFIX_DIR=/s/.*/CT_PREFIX_DIR="${CT_PREFIX:-${PWD}\/x-tools}\/${CT_HOST:+HOST-${CT_HOST}\/}${CT_TARGET}"/' .config
+#     # Fix CT_PREFIX_DIR path to be absolute in the container
+#     #sed -i '/^CT_PREFIX_DIR=/s/.*/CT_PREFIX_DIR="${CT_PREFIX:-${PWD}\/x-tools}\/${CT_HOST:+HOST-${CT_HOST}\/}${CT_TARGET}"/' .config
 
-    echo "Building toolchain (This may take ~30+ minutes)..."
-    ./ct-ng build || echo "Toolchain build failed or already exists. Continuing..."
-fi
+#     echo "Building toolchain (This may take ~30+ minutes)..."
+#     ./ct-ng build || echo "Toolchain build failed or already exists. Continuing..."
+# fi
 
 cd "${BUILDROOT_DIR}"
 if [ "${USE_CROSSTOOL}" -ne 0 ]; then
@@ -134,7 +134,7 @@ br_config --enable BR2_CCACHE
 make olddefconfig
 
 echo "Starting first build (This will take a while)..."
-make 2>&1 | tee build.log
+# make 2>&1 | tee build.log
 
 # ==========================================
 # 4. Bootloader (4_bootloader.md & 4a_bootloader_automat.md)
@@ -205,6 +205,8 @@ genimage \
 exit $?
 EOF
 # chmod +x board/raspberrypi/post-image.sh
+# make 2>&1 | tee build.log
+# exit 0
 
 # ==========================================
 # 6. Rootfs & Initscripts (6_rootfs.md)
@@ -279,8 +281,8 @@ cat << 'EOF' > board/raspberrypi/overlays/led_overlay.dts
 		// Configure the gpio pin controller
 		target = <&gpio>;
 		__overlay__ {
-            led_pin1: led_pins@23 {
-				brcm,pins = <23>; // gpio number
+            led_pin1: led_pins@26 {
+				brcm,pins = <26>; // gpio number
 				brcm,function = <1>; // 0 = input, 1 = output
 				brcm,pull = <0>; // 0 = none, 1 = pull down, 2 = pull up
 			};
@@ -297,7 +299,7 @@ cat << 'EOF' > board/raspberrypi/overlays/led_overlay.dts
 
 				led1: led {
 			                label = "karol";
-					        gpios = <&gpio 23 0>;  // GPIO23, near TX/RX
+					        gpios = <&gpio 26 0>;  // GPIO26
 			                linux,default-trigger = "heartbeat";
 				};
 			};
@@ -374,8 +376,7 @@ echo "Building Hello package..."
 make hello
 
 # Build everything from scratch (mostly for dynamic DEV MGMGT
-make clean all | tee build.log
-
+make 2>&1 | tee build.log
 exit 0
 
 # # ==========================================
