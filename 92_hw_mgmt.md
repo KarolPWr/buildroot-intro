@@ -17,6 +17,7 @@ https://www.raspberrypi.com/documentation/computers/images/GPIO-Pinout-Diagram-2
     GND <-> Dowolny ground
 
 Dodaj overlay wspierający nasz czujnik (do pliku config.txt)
+Pamiętaj o poleceniu sync
 
     dtoverlay=i2c-sensor,bmp280
 
@@ -40,6 +41,7 @@ Napisz program w shell lub w C, który:
 - zapisze dane z ostatniego odczytu do pliku tekstowego
 
 Zintegruj rozwiązanie z Buildrootem. Możesz bazować na recepcie hello lub stworzyć całkiem nową.
+Do szybkiej kompilacji możesz wykorzystać development workflow.
 
 ## Uwaga
 

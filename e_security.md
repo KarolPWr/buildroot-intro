@@ -2,7 +2,8 @@
 
 ## Read-only rootfs
 
-    menu System configuration 
+    menu System configuration
+    menu Filesystem images
 
 ## Wyłączanie niepotrzebnych ficzerów 
 
@@ -32,3 +33,11 @@ Więcej informacji: https://pip.raspberrypi.com/categories/685-whitepapers-app-n
 # Build options w Buildroot
 
 make menuconfig -> build options -> na samym dole security hardening 
+
+# Zadanie - Analiza CVE 
+
+Wywołaj polecenie 
+
+    make pkg-stats
+
+Otwórz w przeglądarce raport, plik output/pkg-stats.html

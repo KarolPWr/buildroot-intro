@@ -13,24 +13,12 @@ Bardziej zaawansowane możliwości:
 - journalctl (wchodzi w skład systemd)
 - syslog 
 
-## gdb, gdbserver 
+## gdb, gdbserver w Buildroot
 
-Korzystamy z narzędzi wyprodukowanych przez crosstool-ng 
+Możemy skorzystać z GDB budowanego przy okazji budowania Toolchaina.
+Potrzebujemy dwóch elementów: GDB (na hosta) oraz gdbserver (na target)
 
-Przerzucamy gdbserver na target
-
-    cd crosstool-ng/x-tools/aarch64-rpi4-linux-gnu/aarch64-rpi4-linux-gnu/debug-root/usr/bin
-    scp gdbserver  root@<TARGET IP>:/tmp
-
-Odpalamy gdbserver na targecie (port 1234)
-
-    cd /tmp
-    ./gdbserver :1234 <SCIEZKA DO BINARKI>
-
-Odpalamy gdb na hoście (laptopie)
-
-    cd crosstool-ng/x-tools/aarch64-rpi4-linux-gnu/bin
-    ./aarch64-rpi4-linux-gnu-gdb <SCIEZKA DO BINARKI>
+Zaznacz w menuconfig w Toolchain-> Copy gdb server to the Target
 
 Uwaga: Żeby zadziałało, nasz program musi być skompilowany z symbolami debugowania.
 

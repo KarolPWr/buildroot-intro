@@ -23,14 +23,12 @@ Spróbuj użyć tego pliku jako inspiracji.
 
 ### Dodanie bootscriptu do listy plików
 
-Dodaj w pętli głównej w post-image.sh:
+Dodaj poniżej definicji zmiennej FILES=() w post-image.sh:
 
     BOOTSCRIPT="${BINARIES_DIR}"/boot.scr
     FILES+=( "${BOOTSCRIPT}" )
 
 ## Zmiana config.txt
-
-### Zadanie
 
 ### Zadanie
 

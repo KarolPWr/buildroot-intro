@@ -108,7 +108,7 @@ Ustaw lepszy mirror:
 Zmiana toolchaina na prebuilt
 
     Toolchain type -> External toolchain
-    Toolchain -> Arm AArch64 14.2.rel1
+    Toolchain -> Arm AArch64 13.3.rel1
     Toolchain origin (Toolchain to be downloaded and installed)
 
 ## Budowanie

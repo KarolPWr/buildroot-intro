@@ -1,0 +1,5 @@
+ln -s /lib/x86_64-linux-gnu/libtinfo.so.6 /lib/x86_64-linux-gnu/libtinfo.so.5
+ln -s /lib/x86_64-linux-gnu/libncursesw.so.6 /lib/x86_64-linux-gnu/libncursesw.so.5
+
+CVE fix
+sudo apt-get install python3-aiohttp python3-ijson python3-requests

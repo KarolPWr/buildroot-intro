@@ -121,7 +121,7 @@ Posłużymy się w tym celu rootfs overlay'em
 
 Stwórz rootfs overlay
 
-    mkdir -p board/raspberrypi4/rootfs_overlay/etc
+    mkdir -p board/raspberrypi4/rootfs_overlay/etc/init.d
 
 Napisz kod serwisu
 

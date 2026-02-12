@@ -20,7 +20,7 @@ Stwórz nowy katalog w workspace/
     cd workspace
     mkdir overlay && cd overlay
 
-Skopiuj szablon overlaya:
+Skopiuj szablon overlaya z tego repozytorium:
 
     cp devicetree/overlay_template.dts <SCIEZKA>/workspace
 
@@ -35,7 +35,7 @@ Oraz przykładów overlayów od Raspberry Pi Foundation:
 https://github.com/raspberrypi/linux/tree/rpi-6.6.y/arch/arm/boot/dts/overlays
 
 
-Skompiluj za pomocą: 
+Skompiluj za pomocą (zmienne trzeba podmienić na pliki): 
 
     dtc -@ -I dts -O dtb -o ${DTBO_TARGET} ${DTS_SOURCE}
 

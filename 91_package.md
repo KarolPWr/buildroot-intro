@@ -25,10 +25,9 @@ Config.in:
 hello.mk:
 
     ################################################################################
-    # Buildroot package description for your C project
+    # Hello program
     ################################################################################
 
-    # Replace 'your-package' with the actual name of your package.
     HELLO_VERSION = 1.0
     HELLO_SITE = $(call github,KarolPWr,aahed,v$(HELLO_VERSION))
 

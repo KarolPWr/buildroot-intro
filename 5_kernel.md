@@ -20,7 +20,7 @@ Wywołaj:
 
 Następnie w menu
 
-    Kernel -> Kernel configuration file -> Using custom (def)config file
+    Kernel -> Kernel configuration -> Using custom (def)config file
 
 i uzupełnij `Configuration file path` o nazwę pliku (wybierz samodzielnie, np my_config)
 

@@ -65,7 +65,7 @@ oraz
 
     make BR2_INSTRUMENTATION_SCRIPTS="/path/to/my/script1 /path/to/my/script2"
 
-## Zadanie
+## Zadanie dodatkowe
 
 Napisz skrypt, który wykona się przed i po każdym kroku budowania danej paczki
 
@@ -73,5 +73,5 @@ Więcej informacji: https://buildroot.org/downloads/manual/manual.html#debugging
 
 ## Logowanie
 
-    make -j$(nproc) 2>&1 | tee build.log
+    make 2>&1 | tee build.log
     klogg build.log
