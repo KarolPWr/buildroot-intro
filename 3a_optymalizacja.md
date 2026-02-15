@@ -20,6 +20,20 @@ Wiem kiedy przebudować projekt?
 
 Więcej informacji: https://buildroot.org/downloads/manual/manual.html#full-rebuild
 
+## Pre-built ccache
+Ściągnij ccache z linku (ok 3 GB):
+
+https://drive.google.com/file/d/1C33ejCUt_5Ez5FH3bgnocEmZvDClXO32/view?usp=sharing
+
+Rozpakuj:
+    mkdir -p $HOME/.buildroot-ccache/
+    tar -xvzf ccache_backup.tar.gz -C $HOME/ --strip-components=2
+
+Sprawdź czy rozpakowało się poprawnie
+
+    ls -la $HOME/.buildroot-ccache/
+   
+
 ## Pierwszy build
 
 Budowanie 
