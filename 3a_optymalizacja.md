@@ -26,6 +26,7 @@ Więcej informacji: https://buildroot.org/downloads/manual/manual.html#full-rebu
 https://drive.google.com/file/d/1C33ejCUt_5Ez5FH3bgnocEmZvDClXO32/view?usp=sharing
 
 Rozpakuj:
+
     mkdir -p $HOME/.buildroot-ccache/
     tar -xvzf ccache_backup.tar.gz -C $HOME/ --strip-components=2
 

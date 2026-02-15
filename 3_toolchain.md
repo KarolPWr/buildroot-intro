@@ -53,21 +53,12 @@ SPACJA - zaznaczamy wybór opcji
 
 (1) - po naciśnięciu numeru przy wyniku wyszukiwania, menuconfig nas tam przeniesie
 
-## Opcjonalnie - Budowanie
-Toolchain można zbudować za pomocą komendy:
 
-    ./ct-ng build
-
-Proces budowania zajmie około 30 minut
 
 # Ustawienie pre-built toolchain
 
-Ustaw lepszy mirror:
-
-    make menuconfig # Wejście do menu konfiguracyjnego
-    Build options -> Mirrors and download location -> Wpisz https://ftp.gnu.org/gnu w primary download site
-
-Zmiana toolchaina na prebuilt
+Przejdź do katalogu buildroot/ 
+Następnie zmień toolchaina na opcję prebuilt:
 
     Toolchain type -> External toolchain
     Toolchain -> Arm AArch64 13.3.rel1
@@ -79,6 +70,12 @@ W kolejnym ćwiczeniu
     
     
 
+## Opcjonalnie - Budowanie toolchaina
+Toolchain można zbudować za pomocą komendy:
+
+    ./ct-ng build
+
+Proces budowania zajmie około 30 minut
 
 
 # Opcjonalnie - Ustawienie external toolchaina
