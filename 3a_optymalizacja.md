@@ -41,8 +41,15 @@ Budowanie
 
     make 2>&1 | tee build.log
 
-Wgranie na kartę SD
+Wgranie na kartę SD (poza kontenerem!)
 
+Sprawdż pod jaki DEVICE podłączy się karta pamięci
+
+    dmesg -w
+    # Włóż kartę pamięci do slotu
+    Na podstawie outputu z dmesg podmień <DEVICE> w komendzie (np. na sda)
+
+    cd workspace/buildroot
     dd if=output/images/sdcard.img of=/dev/<DEVICE> status=progress && sync
 
 ## Test na Raspberry 

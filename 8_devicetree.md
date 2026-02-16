@@ -22,7 +22,7 @@ Stwórz nowy katalog w workspace/
 
 Skopiuj szablon overlaya z tego repozytorium:
 
-    cp devicetree/overlay_template.dts <SCIEZKA>/workspace
+    cp <SCIEZKA DO REPO>/devicetree/overlay_template.dts <SCIEZKA>/workspace
 
 Wypełnij pola oznaczone symbolami XXX. 
 
@@ -75,7 +75,7 @@ Zweryfikuj czy pliki są tam gdzie trzeba:
 
 - config.txt zawiera odpowiednią linijkę:
 
-        dtoverlay=custom-overlay line.
+        dtoverlay=led_overlay
 
 - Zaprogramuj płytkę, obserwuj czy działa tak jak powinna.
 

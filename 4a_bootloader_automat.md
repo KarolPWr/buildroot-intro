@@ -3,6 +3,7 @@
 ## Przeniesienie u-boot.bin na kartę pamięci
 
 Zmodyfikuj buildroot/board/raspberrypi/post-image.sh
+**[Dodaj po pętli FOR]**
 
     UBOOT="${BINARIES_DIR}"/u-boot.bin
     FILES+=( "${UBOOT}" )
@@ -33,6 +34,8 @@ Dodaj poniżej definicji zmiennej FILES=() w post-image.sh:
 ### Zadanie
 
 Musimy wskazać w pliku config.txt że pierwszym programem wykonywalnym będzie u-boot.bin zamiast Image (kernel image)
+
+Dodaj poniższą linijkę do post-image.sh:
 
     sed -i 's/^kernel=Image$/kernel=u-boot.bin/' "${BINARIES_DIR}/rpi-firmware/config.txt"
 

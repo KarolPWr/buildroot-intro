@@ -14,6 +14,7 @@ Skrypt obsługujący start połączenia z siecią:
     /etc/init.d/S40network
 
 Sprawdź czy na Twoim targecie działa internet:
+[Polecenie odpal na Rasperry Pi]
 
     ping 8.8.8.8
     ip address
@@ -28,7 +29,7 @@ Na początku bez Buildroota. Tworzymy ręcznie pliki na targecie i patrzymy czy 
 
     vi /usr/sbin/resource_monitor.sh
 
-Napisz skrypt, który będzie co 60 sekund drukował podstawowe informacje o systemie (uptime, data, wolna pamięć)
+ZADANIE - Napisz skrypt, który będzie co 60 sekund drukował podstawowe informacje o systemie (uptime, data, wolna pamięć)
 
 Output powinien być zapisany do pliku o nazwie 
 
@@ -145,7 +146,7 @@ Włącz obsługę rootfs overlay:
     Root filesystem overlay directories
         (board/raspberrypi4/rootfs_overlay)
 
-## Przebudowa obrazu
+## Przebudowa obrazu OD ZERA
 
     make clean all
 
