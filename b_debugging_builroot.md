@@ -2,7 +2,7 @@
 
 ## Make tips
 
-Wyświetl komendy wykonywane przez make: 
+Verbose build przez make: 
 
     $ make V=1 <target>
 

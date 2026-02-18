@@ -29,7 +29,7 @@ Dodaj poniżej definicji zmiennej FILES=() w post-image.sh:
     BOOTSCRIPT="${BINARIES_DIR}"/boot.scr
     FILES+=( "${BOOTSCRIPT}" )
 
-## Zmiana config.txt
+## Automatyzacja zmian w config.txt
 
 ### Zadanie
 

@@ -46,7 +46,7 @@ Wracamy do Buildroota
 
 Przenieś plik do boards/raspberrypi
 
-    mkdir buildroot/board/raspberrypi/overlays
+    mkdir -p buildroot/board/raspberrypi/overlays
     cp led_overlay.dts buildroot/board/raspberrypi/overlays
 
 Zmodyfikuj post-build.sh
@@ -58,18 +58,13 @@ Zmodyfikuj post-build.sh
     # Kompilacja overlaya
     dtc -@ -I dts -O dtb -o ${DTBO_TARGET} ${DTS_SOURCE}
 
-Zmodyfikuj config.txt dla platformy, dodaj linijkę:
+Zmodyfikuj config.txt dla platformy, dodaj linijkę do skryptu post-build.sh
 
     echo "dtoverlay=led_overlay" >> "${BINARIES_DIR}"/rpi-firmware/config.txt
 
-do skryptu post-build.sh
+Przebuduj i wgraj na kartę SD.
 
-Przebuduj
-
-    make
-    sudo dd if=sdcard.img of=/dev/<SDXXXX>
-
-Zweryfikuj czy pliki są tam gdzie trzeba:
+**Zweryfikuj** czy pliki są tam gdzie trzeba:
 
 - Nasz nowy, skompilowany overlay jest w katalogu overlays w folderze rpi-firmware
 

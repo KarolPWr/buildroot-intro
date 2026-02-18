@@ -2,11 +2,9 @@
 
 ## Przygotowanie
 
-Sprawdź czy moduł kernela dający wsparcie jest w naszym mernelu
+Sprawdź czy moduł kernela dający wsparcie jest w naszym kernelu (BMP280)
 
     make linux-menuconfig
-
-Co oznacza symbol M przy module? 
 
 Podłącz czujnik zgodnie z pinoutem: 
 https://www.raspberrypi.com/documentation/computers/images/GPIO-Pinout-Diagram-2.png?hash=df7d7847c57a1ca6d5b2617695de6d46
@@ -31,7 +29,7 @@ Nowe pliki pojawią się w ścieżce:
 
 Przykład:
 
-    # cat /sys/bus/iio/devices/iio:device0/in_temp_input 
+    cat /sys/bus/iio/devices/iio:device0/in_temp_input 
     24260
 
 ## Zadanie
