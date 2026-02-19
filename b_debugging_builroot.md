@@ -4,15 +4,15 @@
 
 Verbose build przez make: 
 
-    $ make V=1 <target>
+    make V=1 <target>
 
 Wyświetl wszystkie defconfigi: 
 
-    $ make list-defconfigs
+    make list-defconfigs
 
 Wyświetl wszystkie możliwe targety: 
 
-    $ make help
+    make help
     make show-targets
 
 "delete all build products (including build directories, host, staging and target trees, the images and the toolchain)":
