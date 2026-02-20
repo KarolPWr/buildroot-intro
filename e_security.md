@@ -26,7 +26,7 @@ DEVMEM
 
 ## Secure boot 
 
-Więcej informacji: https://pip.raspberrypi.com/categories/685-whitepapers-app-notes-compliance-guides/documents/RP-003466-WP/Boot-Security-Howto.pdf
+Więcej informacji: https://pip-assets.raspberrypi.com/categories/1260-security/documents/RP-003466-WP-3-Boot%20Security%20Howto.pdf?disposition=inline
 
 ## Apparmor, SELinux
 

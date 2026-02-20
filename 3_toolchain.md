@@ -51,11 +51,11 @@ SPACJA - zaznaczamy wybór opcji
 
 / - szukanie
 
-(1) - po naciśnięciu numeru przy wyniku wyszukiwania, menuconfig nas tam przeniesie
+(1) - po naciśnięciu numeru przy wyniku wyszukiwania (np. 1), menuconfig nas tam przeniesie
 
 
 
-# Ustawienie pre-built toolchain
+# Buildroot: Ustawienie pre-built toolchain
 
 Przejdź do katalogu buildroot/ 
 Następnie zmień toolchaina na opcję prebuilt:
@@ -64,7 +64,7 @@ Następnie zmień toolchaina na opcję prebuilt:
     Toolchain -> Arm AArch64 13.3.rel1
     Toolchain origin (Toolchain to be downloaded and installed)
 
-## Budowanie
+## Budowanie obrazu
 
 W kolejnym ćwiczeniu
     

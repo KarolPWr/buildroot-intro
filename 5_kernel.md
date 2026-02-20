@@ -30,6 +30,10 @@ Zaktualizuj konfigurację:
 
 Sprawdź czy plik został stworzony i czy nie jest pusty.
 
+Przebuduj obraz
+
+    make 2>&1 | tee build.log
+
 ## Test
 
 Porównaj log z bootowania kernela z logiem przed modyfikacjami. 

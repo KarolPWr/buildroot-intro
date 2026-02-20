@@ -39,7 +39,11 @@ Dodaj poniższą linijkę do post-image.sh:
 
     sed -i 's/^kernel=Image$/kernel=u-boot.bin/' "${BINARIES_DIR}/rpi-firmware/config.txt"
 
-Zwróć również uwagę na zmienną KERNEL. W jaki sposób jest ustalana i czy wymaga zmiany?
+Zwróć również uwagę na zmienną KERNEL. Zmień ją na:
+
+    KERNEL="Image"
+
+Dlaczego ta zmiana była konieczna?
 
 ## Test
 

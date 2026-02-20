@@ -64,6 +64,8 @@ Zmodyfikuj config.txt dla platformy, dodaj linijkę do skryptu post-build.sh
 
 Przebuduj i wgraj na kartę SD.
 
+*Uwaga*: Komenda echo użyta w taki sposób spowoduje, że wpis z dtoverlay= będzie wpisywany na nowo za każdym buildem. Spróbuj ulepszyć tą komendę tak, żeby parametr był wpisywany tylko jeśli jeszcze nie istnieje.
+
 **Zweryfikuj** czy pliki są tam gdzie trzeba:
 
 - Nasz nowy, skompilowany overlay jest w katalogu overlays w folderze rpi-firmware

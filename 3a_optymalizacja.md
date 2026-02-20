@@ -41,7 +41,7 @@ Budowanie
 
     make 2>&1 | tee build.log
 
-Wgranie na kartę SD (poza kontenerem!)
+### Wgranie na kartę SD (poza kontenerem!)
 
 Sprawdż pod jaki DEVICE podłączy się karta pamięci
 
@@ -50,10 +50,10 @@ Sprawdż pod jaki DEVICE podłączy się karta pamięci
     Na podstawie outputu z dmesg podmień <DEVICE> w komendzie (np. na sda)
 
     cd workspace/buildroot
-    dd if=output/images/sdcard.img of=/dev/<DEVICE> status=progress && sync
+    dd if=output/images/sdcard.img of=/dev/<DEVICE> conv=fdatasync status=progress && sync
 
 ## Test na Raspberry 
 
-Włóż kartę SD do slotu na płytce. Obserwuj co wyświetli się na połączeniu szeregowym. Po kilku sekundach pojawią się pierwsze logi.
+Włóż kartę SD do slotu na płytce i podłącz zasilanie. Obserwuj co wyświetli się na połączeniu szeregowym. Po kilku sekundach pojawią się pierwsze logi.
 
     login: root

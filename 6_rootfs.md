@@ -88,6 +88,10 @@ Za pomocą make menuconfig dodaj edytor tekstowy
 
     nano
 
+oraz midnight commander
+
+    mc
+
 ## root password
 
 Skonfiguruj hasło dla użytkownika root (dowolne, najlepiej krótkie np. 1234)
@@ -98,10 +102,6 @@ Dodaj dodatkowe narzędzia dla networkingu
     Target packages -> Networking applications
 
     Enable ethtool
-
-## firmware 
-
-W przypadku WiFi należy ustawić odpowiednie wsparcie firmware. Dla ethernetu już wszystko jest gotowe.
 
 ## dev management 
 

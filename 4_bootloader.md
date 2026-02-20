@@ -19,11 +19,11 @@ Wgraj nowy obraz na Raspberry - co się dzieje po boocie?
 
 ## Modyfikacja config.txt 
 
-Przenieś plik u-boot.bin na partycję bootfs
+Przenieś plik u-boot.bin na boot partycję
 
-Uwaga: partycja bootfs może również pokazać się jako numeryczne UUID np. 6EBC-CFB7
+Uwaga: partycja może również pokazać się jako numeryczne UUID np. 6EBC-CFB7
 
-    cp u-boot.bin <karta_sd>/bootfs
+    cp u-boot.bin <karta_sd>/<NUMER>
 
 Zmodyfikuj plik config.txt na partycji bootfs
 
