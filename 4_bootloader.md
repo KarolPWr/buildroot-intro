@@ -22,7 +22,8 @@ Wgraj nowy obraz na Raspberry - co się dzieje po boocie?
 Przenieś plik u-boot.bin na boot partycję
 
 Uwaga: partycja może również pokazać się jako numeryczne UUID np. 6EBC-CFB7
-<SCIEZKA> to ścieżka do zamontowanej partycji z plikami do bootowania, zazwyczaj w /media
+
+SCIEZKA to ścieżka do zamontowanej partycji z plikami do bootowania, zazwyczaj w /media
 
     cp u-boot.bin <SCIEZKA>/<NUMER>
 
