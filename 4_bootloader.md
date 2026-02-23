@@ -42,6 +42,6 @@ Zmodyfikuj plik config.txt na partycji bootfs
     cd workspace/
     vim boot_cmd.txt # przepisujemy to co u góry
     buildroot/output/build/uboot-2024.10/tools/mkimage -A arm64 -O linux -T script -C none -d boot_cmd.txt boot.scr
-    cp boot.scr <karta_sd>/bootfs && sync
+    cp boot.scr <SCIEZKA>/<NUMER> && sync
 
 Jak to zautomatyzować?
