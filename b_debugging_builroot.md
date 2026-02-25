@@ -23,10 +23,6 @@ Nuke (czyszczenie build products i konfiguracji):
 
     make distclean
 
-Dumping the internal make variables: One can dump the variables known to make, along with their values:
-
-    make -s printvars VARS='VARIABLE1 VARIABLE2'
-
 ### Drukowanie wartości zmiennych
 
     make -s printvars VARS='VARIABLE1 VARIABLE2'
